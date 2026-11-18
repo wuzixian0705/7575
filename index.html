@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QUEEN'S CHESS CLUB</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Queen's Chess Club">
+          <span class="brand-mark">♛</span>
+          <span>QUEEN'S<br /><b>CHESS CLUB</b></span>
+        </a>
+        <nav class="nav-links" aria-label="主要導覽">
+          <a class="active" href="#">PLAY</a>
+          <a href="#">PUZZLES</a>
+          <a href="#">LEARN</a>
+          <a href="#">WATCH</a>
+        </nav>
+        <div class="profile">
+          <div class="profile-copy">
+            <strong>Alex Morgan</strong>
+            <span><i></i> 1,248</span>
+          </div>
+          <div class="avatar">AM</div>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <aside class="side-panel left-panel">
+          <section class="player-card opponent">
+            <div class="avatar player-avatar dark-avatar">🐍</div>
+            <div class="player-info">
+              <div class="player-name">TheDarkKnight <span>🇬🇧</span></div>
+              <div class="rating">1482 <small>rapid</small></div>
+            </div>
+            <div class="captured" id="capturedWhite"></div>
+          </section>
+
+          <section class="match-status">
+            <div class="status-label"><span class="live-dot"></span> RANKED · RAPID</div>
+            <div class="clock opponent-clock" id="blackClock">10:00</div>
+          </section>
+
+          <section class="moves-panel">
+            <div class="moves-header">
+              <span>MOVES</span>
+              <button id="undoBtn" title="退回一步" aria-label="退回一步">↶</button>
+            </div>
+            <div class="moves-list" id="movesList"></div>
+          </section>
+
+          <div class="side-actions">
+            <button id="newGameBtn" class="primary-button"><span>＋</span> NEW GAME</button>
+            <button class="icon-button" title="設定" aria-label="設定">⚙</button>
+          </div>
+        </aside>
+
+        <section class="board-section">
+          <div class="board-frame">
+            <div id="board" class="chess-board" aria-label="西洋棋棋盤"></div>
+          </div>
+        </section>
+
+        <aside class="side-panel right-panel">
+          <section class="player-card self">
+            <div class="avatar player-avatar">AM</div>
+            <div class="player-info">
+              <div class="player-name">Alex Morgan <span>🇺🇸</span></div>
+              <div class="rating">1248 <small>rapid</small></div>
+            </div>
+            <div class="captured" id="capturedBlack"></div>
+          </section>
+
+          <section class="match-status">
+            <div class="status-label">YOUR MOVE</div>
+            <div class="clock self-clock" id="whiteClock">10:00</div>
+          </section>
+
+          <section class="analysis-card">
+            <div class="analysis-head">
+              <span>POSITION</span>
+              <strong id="positionLabel">Equal</strong>
+            </div>
+            <div class="eval-track"><div id="evalFill" class="eval-fill"></div></div>
+            <div class="eval-score"><b id="evalScore">0.0</b><span>BEST: <em id="bestMove">—</em></span></div>
+          </section>
+
+          <section class="chat-card">
+            <div class="chat-head">
+              <span>CHAT</span>
+              <button aria-label="展開對話">⋯</button>
+            </div>
+            <div class="chat-message">
+              <strong>TheDarkKnight</strong>
+              <p>Good luck, have fun!</p>
+            </div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
